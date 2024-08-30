@@ -14,6 +14,7 @@ LABEL org.opencontainers.image.description="Alps Webmail Server"
 LABEL org.opencontainers.image.source="https://github.com/cyberworm-uk/alps-mailu.git"
 COPY --from=build /alps.build/alps /alps/alps
 COPY --from=build /alps.build/themes /alps/themes
+EXPOSE 1323/tcp
 WORKDIR /alps
 USER nobody
 ENTRYPOINT [ "/alps/alps" ]
